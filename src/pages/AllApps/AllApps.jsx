@@ -28,7 +28,6 @@ const AllApps = () => {
 
     return (
         <div>
-            {/* Header */}
             <div className="py-16">
                 <h2 className="text-4xl font-bold text-center text-primary flex justify-center gap-3">
                     Our All Applications
@@ -38,7 +37,6 @@ const AllApps = () => {
                 </p>
             </div>
 
-            {/* Apps Count + Search */}
             <div className="w-11/12 mx-auto flex flex-col-reverse lg:flex-row gap-5 items-start justify-between lg:items-end my-10 sticky">
                 <h2 className="text-lg underline font-bold">{`(${filteredApps.length})`} Apps Found</h2>
 
@@ -54,7 +52,6 @@ const AllApps = () => {
                 </label>
             </div>
 
-            {/* Apps Grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 mb-10">
                 {isSearching ? (
                     <div className="col-span-full flex justify-center py-10">

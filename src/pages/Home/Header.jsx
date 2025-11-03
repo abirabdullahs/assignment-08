@@ -21,18 +21,22 @@ import HeroImg from '../../assets/images/hero.png'
         {/* App Store Buttons */}
         <div className="flex justify-center gap-3 mt-6">
           <button className="bg-white border border-gray-700 hover:border-purple-500 hover:bg-gray-800 transition px-4 py-2 rounded-lg text-sm flex items-center gap-2">
+            <a href="https://play.google.com/store/games?hl=en">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
               alt="Google Play"
               className="h-6"
             />
+            </a>
           </button>
           <button className="bg-white border border-gray-700 hover:border-purple-500 hover:bg-gray-800 transition px-4 py-2 rounded-lg text-sm flex items-center gap-2">
+           <a href="https://www.apple.com/app-store/">
             <img
               src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
               alt="App Store"
               className="h-6"
             />
+           </a>
           </button>
         </div>
       </div>
