@@ -1,10 +1,9 @@
-import React from 'react';
-import { ClipLoader } from 'react-spinners';
+import { Oval } from "react-loader-spinner";
 
-export default function Loader() {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-      <ClipLoader color="#36d7b7" size={50} />
-    </div>
-  );
-}
+const Loader = () => (
+  <div className="flex justify-center items-center h-[200px]">
+    <Oval height={60} width={60} color="#36d7b7" visible={true} />
+  </div>
+);
+
+export default Loader;

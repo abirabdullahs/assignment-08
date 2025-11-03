@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLoaderData} from 'react-router';
 import SingleApp from '../Home/SingleApp';
-import { ClipLoader } from 'react-spinners';
+import { Oval } from "react-loader-spinner";
 
 const AllApps = () => {
     const data = useLoaderData();
