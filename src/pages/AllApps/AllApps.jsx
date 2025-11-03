@@ -1,15 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLoaderData} from 'react-router';
 import SingleApp from '../Home/SingleApp';
+import { ClipLoader } from 'react-spinners';
 
 const AllApps = () => {
     const data = useLoaderData();
     const [search, setSearch] = useState("");
+    const [isSearching, setIsSearching] = useState(false);
     
 
     const filteredApps = data.filter(app =>
         app.title.toLowerCase().includes(search.toLowerCase())
     );
+
+    // debounce visual indicator for search
+    useEffect(() => {
+        if (search === "") {
+            setIsSearching(false);
+            return;
+        }
+        setIsSearching(true);
+        const id = setTimeout(() => setIsSearching(false), 300);
+        return () => clearTimeout(id);
+    }, [search]);
 
     
 
@@ -43,7 +56,11 @@ const AllApps = () => {
 
             {/* Apps Grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 mb-10">
-                {filteredApps.length > 0 ? (
+                {isSearching ? (
+                    <div className="col-span-full flex justify-center py-10">
+                        <ClipLoader color="#36d7b7" size={50} />
+                    </div>
+                ) : filteredApps.length > 0 ? (
                     filteredApps.map((singleApp) => (
                         <SingleApp key={singleApp.id} singleApp={singleApp} />
                     ))
